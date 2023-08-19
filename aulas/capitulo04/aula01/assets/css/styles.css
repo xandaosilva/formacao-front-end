@@ -1,0 +1,14 @@
+*{
+    font-family: sans-serif;
+}
+
+h1, h2{
+    color: cadetblue;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+li{
+    list-style: georgian;
+}
