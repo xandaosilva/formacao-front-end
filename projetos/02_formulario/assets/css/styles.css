@@ -1,11 +1,13 @@
 :root{
     --bg-primary-color: #f0ebf8;
-    --bg-secondary-color: #673ab7;
+    --purple-color: #673ab7;
     --bg-terthiary-color: #fdfdfd;
     --title-color: #333;
     --text-color: #444;
     --border-color: #ccc;
+    --border-color-secondary: #dfdfdf;
     --white-color: #fff;
+    --required-color: #d80835;
 }
 
 *{
@@ -43,7 +45,7 @@ textarea{
 .header{
     height: 160px;
     padding: 20px;
-    background-color: var(--bg-secondary-color);
+    background-color: var(--purple-color);
 }
 
 .header h3{
@@ -57,4 +59,75 @@ textarea{
     margin: 0 auto;
     position: relative;
     top: -62px;
+}
+
+.form-header{
+    border-bottom: solid 1px var(--border-color-secondary);
+    height: 45px;
+}
+
+.form-header p{
+    color: var(--purple-color);
+    border-bottom: solid 2px var(--purple-color);
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+    text-transform: uppercase;
+    height: 45px;
+    line-height: 45px;
+}
+
+.form-body{
+    padding: 30px;
+}
+
+.form-title{
+    margin-bottom: 15px;
+}
+
+.form-body p{
+    margin-bottom: 20px;
+}
+
+.required-field{
+    color: var(--required-color);
+}
+
+.box-input{
+    margin-bottom: 35px;
+}
+
+.block{
+    display: block;
+}
+
+.optional-box{
+    display: inline-block;
+    margin: 0 30px 30px 0;
+}
+
+.optional-list li{
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.box-input p{
+    margin-bottom: 15px;
+}
+
+.btn-submit{
+    background-color: var(--purple-color);
+    color: var(--white-color);
+    border: solid 2px transparent;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.btn-submit:hover{
+    background-color: var(--white-color);
+    border-color: var(--purple-color);
+    color: var(--purple-color);
 }
