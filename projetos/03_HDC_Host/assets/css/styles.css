@@ -1,5 +1,6 @@
 :root{
     --bg-primary-color: #232a31;
+    --bg-search-domain-color: #34454e;
     --bg-secondary-color: #e8e9ea;
     --bg-terthiary-color: #202b34;
     --black-color: #000;
@@ -10,6 +11,7 @@
     --pink-color: #f45c57;
     --red-color: #ef3f29;
     --text-primary-color: #70747a;
+    --text-search-domain-color: #d5d5d5;
     --text-secondary-color: #ccc;
     --text-terthiary-color: #333;
     --white-color: #fff;
@@ -217,4 +219,49 @@ nav{
 
 .plan .recommended{
     background-color: var(--pink-color);
+}
+
+.searchdomain-container{
+    background-color: var(--bg-search-domain-color);
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.searchdomain-container h2{
+    color: var(--white-color);
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.searchdomain-container p{
+    color: var(--text-search-domain-color);
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.searchdomain-container input{
+    display: block;
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.searchdomain-container input[type="text"]{
+    width: 60%;
+    padding: 20px;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.searchdomain-container input[type="submit"]{
+    background-color: var(--green-primary-color);
+    color: var(--white-color);
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 24px;
+    opacity: 0.8;
+}
+
+.searchdomain-container input[type="submit"]:hover{
+    opacity: 1;
 }
