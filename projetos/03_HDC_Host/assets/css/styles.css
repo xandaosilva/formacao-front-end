@@ -1,13 +1,17 @@
 :root{
-    --bg-color: #232a31;
+    --bg-primary-color: #232a31;
+    --bg-secondary-color: #e8e9ea;
+    --bg-terthiary-color: #202b34;
     --black-color: #000;
     --green-primary-color: #2cc76a;
     --green-secondary-color: #22bb5f;
+    --green-terthiary-color: #2cc762;
     --orange-color: #ef8f29;
+    --pink-color: #f45c57;
     --red-color: #ef3f29;
     --text-primary-color: #70747a;
     --text-secondary-color: #ccc;
-    --title-color: #333;
+    --text-terthiary-color: #333;
     --white-color: #fff;
 }
 
@@ -19,7 +23,7 @@
 }
 
 h1, h2, h3{
-    color: var(--title-color);
+    color: var(--text-terthiary-color);
 }
 
 p{
@@ -29,7 +33,7 @@ p{
 .navbar-container{
     width: 100%;
     height: 80px;
-    background-color: var(--bg-color);
+    background-color: var(--bg-primary-color);
     padding: 0 2rem;
 }
 
@@ -140,4 +144,77 @@ nav{
 
 .services-container p{
     line-height: 24px;
+}
+
+.pricing-container{
+    padding-bottom: 5rem;
+    text-align: center;
+}
+
+.pricing-container h2{
+    font-size: 36px;
+}
+
+.pricing-container p{
+    font-size: 20px;
+}
+
+.plans-container{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 50px auto 0;
+}
+
+.plan{
+    flex: 1;
+    max-width: 275px;
+    margin: 0 20px;
+}
+
+.plan ul{
+    padding: 0;
+}
+
+.plan li{
+    list-style: none;
+    height: 50px;
+    line-height: 50px;
+    background-color: var(--bg-secondary-color);
+    color: var(--text-terthiary-color);
+}
+
+.plan .price{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: var(--green-terthiary-color);
+    color: var(--white-color);
+    text-align: center;
+    line-height: 120px;
+    margin: 0 auto -50px;
+    font-size: 18px;
+    position: relative;
+}
+
+.plan .plan-name{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--white-color);
+    background-color: var(--bg-terthiary-color);
+    padding: 50px 0;
+}
+
+.plan .plan-btn{
+    background-color: var(--green-terthiary-color);
+    color: var(--white-color);
+    font-size: 24px;
+    height: 75px;
+    line-height: 75px;
+    cursor: pointer;
+}
+
+.plan .recommended{
+    background-color: var(--pink-color);
 }
