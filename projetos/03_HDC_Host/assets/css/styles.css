@@ -1,0 +1,101 @@
+:root{
+    --bg-color: #232a31;
+    --black-color: #000;
+    --green-primary-color: #2cc76a;
+    --green-secondary-color: #22bb5f;
+    --text-primary-color: #70747a;
+    --text-secondary-color: #ccc;
+    --title-color: #333;
+    --white-color: #fff;
+}
+
+*{
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3{
+    color: var(--title-color);
+}
+
+p{
+    color: var(--text-primary-color);
+}
+
+.navbar-container{
+    width: 100%;
+    height: 80px;
+    background-color: var(--bg-color);
+    padding: 0 2rem;
+}
+
+nav{
+    position: relative;
+}
+
+.logo{
+    width: 50px;
+    margin-top: 15px;
+}
+
+.navbar-items{
+    position: absolute;
+    right: 0;
+    height: 80px;
+    line-height: 80px;
+    margin: 0;
+    display: inline-block;
+}
+
+.navbar-items li{
+    display: inline-block;
+    text-transform: uppercase;
+    margin-left: 25px;
+}
+
+.navbar-items a{
+    color: var(--white-color);
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.navbar-items a:hover{
+    color: var(--text-secondary-color);
+}
+
+.default-btn{
+    padding: 15px 20px;
+    background-color: var(--green-primary-color);
+    border-radius: 5px;
+}
+
+.navbar-items .default-btn:hover{
+    background-color: var(--green-secondary-color);
+    color: var(--white-color);
+}
+
+.main-banner{
+    background-image: url("../img/mainbanner.png");
+    background-size: cover;
+    background-position: center;
+    padding: 10rem 0;
+}
+
+.main-banner h1, .main-banner p{
+    color: var(--white-color);
+    text-align: center;
+    font-weight: bold;
+    text-shadow: var(--black-color) 3px 2px 3px;
+}
+
+.main-banner h1{
+    font-size: 54px;
+}
+
+.main-banner p{
+    font-size: 32px;
+}
+
+
