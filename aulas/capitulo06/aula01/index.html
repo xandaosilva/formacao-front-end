@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Informações pessoais</legend>
+            <div>
+                <label for="name">Nome</label>
+                <input type="text" name="name" id="name" placeholder="Digite o seu nome" required>
+            </div>
+            <div>
+                <label for="age">Idade</label>
+                <input type="number" name="age" id="age" placeholder="Digite a sua idade" required>
+            </div>
+            <div>
+                <label for="birthdayDate">Data de aniversário</label>
+                <input type="date" name="birthdayDate" id="birthdayDate">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Digite o seu email" required>
+            </div>
+            <div>
+                <label for="password">Senha</label>
+                <input type="password" name="password" id="password" placeholder="Digite a sua senha" required>
+            </div>
+            <div>
+                <label for="confirmPassword">Confirmar senha</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirme a sua senha" required>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Informações profissionais</legend>
+            <div>
+                <label for="technologies">Selecione a sua tecnologia preferida</label>
+                <select name="technologies" id="technologies">
+                    <option value="html">Html</option>
+                    <option value="css">Css</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="java">Java</option>
+                    <option value="python">Python</option>
+                </select>
+            </div>
+            <div>
+                <label for="contract">Você leu os termos do contrato</label>
+                <select name="contract" id="contract">
+                    <option value="yes">Sim</option>
+                    <option value="no" selected>Não</option>
+                </select>
+            </div>
+            <div>
+                <label for="frameworks">Selecione os frameworks desejados</label>
+                <select name="frameworks" id="frameworks" multiple>
+                    <option value="angular">Angular</option>
+                    <option value="vue">Vue</option>
+                    <option value="react">React</option>
+                    <option value="spring">Spring</option>
+                    <option value="django">Django</option>
+                </select>
+            </div>
+            <div>
+                <label for="message">Envie-nos uma mensagem</label>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Digite aqui a sua mensagem"></textarea>
+            </div>
+            <div>
+                <label for="certification">Quais as sua certificações</label>
+                <input type="text" name="certification" id="certification" list="certifications">
+                <datalist id="certifications">
+                    <option value="frontend"></option>
+                    <option value="backend"></option>
+                    <option value="sistemas operacionais"></option>
+                </datalist>
+            </div>
+            <div>
+                <label for="system">Qual seu sistema operacional preferido?</label>
+                <div class="radio">
+                    <input type="radio" name="system" value="linux">
+                    <label for="linux">Linux</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="system" value="mac">
+                    <label for="mac">Mac Os</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="system" value="windows">
+                    <label for="windows">Windows</label>
+                </div>
+            </div>
+            <div>
+                <div class="radio">
+                    <label for="newsletter">Clique aqui para assinar nossa newsletter</label>
+                    <input type="checkbox" name="newsletter" id="newsletter" value="yes">
+                </div>
+            </div>
+            <div>
+                <label for="curriculum">Envie o seu currículo</label>
+                <input type="file" name="curriculum" id="curriculum">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Ações</legend>
+            <input type="reset" value="Limpar">
+            <input type="submit" value="Cadastrar">
+        </fieldset>
+    </form>
+</body>
+</html>
