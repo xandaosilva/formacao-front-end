@@ -1,0 +1,39 @@
+h1{
+    color: darkcyan;
+}
+
+p{
+    background-color: #bbb;
+    color: black;
+}
+
+h3{
+    display: none;
+}
+
+/* 
+Break points
+<= 600 -> cel
+<= 768 -> tablets
+<= 992 -> laptops
+> 992  -> desktops
+*/
+
+@media screen and (max-width: 500px) {
+    h1{
+        color: aquamarine;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    p{
+        color: #bbb;
+        background-color: black;
+    }
+}
+
+@media screen and (orientation: landscape){
+    h3{
+        display: block;
+    }
+}
