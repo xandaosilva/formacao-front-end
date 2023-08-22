@@ -1,3 +1,142 @@
+:root{
+    --blue-color: #37a1f7;
+    --gray-color: #ddd;
+    --text-primary-color: #444;
+    --text-secondary-color: #333;
+    --white-color: #fff;
+}
+
 *{
-    font-family: sans-serif;
+    font-family: Georgia;
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    color: var(--text-primary-color);
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+a:hover{
+    color: var(--blue-color);
+}
+
+#navbar{
+    padding: 1.5rem 2.5rem;
+    border-bottom: solid 2px var(--gray-color);
+}
+
+#navbar-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-links{
+    display: flex;
+    gap: 1rem;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 3rem;
+    padding: 2rem 2.5rem;
+}
+
+#posts-container{
+    flex: 3 1 0;
+}
+
+.post{
+    margin-bottom: 2.5rem;
+}
+
+.post img{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.title, .description, .author{
+    margin-bottom: 1rem;
+}
+
+.title{
+    font-size: 2rem;
+}
+
+.author{
+    color: var(--text-secondary-color);
+    font-weight: bold;
+}
+
+#sidebar{
+    flex: 1 1 0;
+}
+
+#search-bar, #categories, #tags{
+    padding: 1.5rem;
+    border: solid 1px var(--gray-color);
+    margin-bottom: 1rem;
+}
+
+#search-bar h4, #categories h4, #tags h4{
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+}
+
+#search-bar form{
+    display: flex;
+}
+
+#search-bar input{
+    padding: 0.5rem 1rem;
+    border: solid 1px var(--gray-color);
+}
+
+#search-bar input[type="submit"]{
+    cursor: pointer;
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    border: none;
+}
+
+#categories li{
+    margin-bottom: 1rem;
+}
+
+#tags-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+#tags-container a{
+    background-color: var(--gray-color);
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.3rem;
+}
+
+#footer{
+    border-top: solid 2px var(--gray-color);
+    padding: 3rem;
+    text-align: center;
+}
+
+#footer h2, #footer p{
+    margin-bottom: 1rem;
+}
+
+@media(max-width: 450px){
+    .container{
+        flex-wrap: wrap;
+    }
 }
