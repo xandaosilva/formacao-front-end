@@ -1,5 +1,8 @@
 :root{
     --bg-color: linear-gradient(180deg, #db4444 0%, #3f24dd 98%);
+    --white-color: #fff;
+    --gray-dark-color: #333;
+    --gray-light-color: #ccc;
 }
 
 *{
@@ -13,7 +16,7 @@ body{
     padding: 2rem;
     min-height: 100vh;
     background: var(--bg-color);
-    color: #fff;
+    color: var(--white-color);
 }
 
 h2{
@@ -28,9 +31,9 @@ h2{
     max-width: 300px;
     margin: 1rem auto;
     padding: 1rem;
-    background-color: #fff;
+    background-color: var(--white-color);
     border-radius: 1rem;
-    color: #333;
+    color: var(--gray-dark-color);
 }
 
 .form-control{
@@ -51,7 +54,7 @@ h2{
     margin-bottom: 1rem;
     flex: 1;
     padding: 0.6rem 0.4rem;
-    border: solid 1px #333;
+    border: solid 1px var(--gray-dark-color);
     width: 50px;
     border-radius: 5px;
     text-align: center;
@@ -61,9 +64,9 @@ h2{
     max-height: 50px;
     padding: 0.6rem 1.2rem;
     width: 200px;
-    color: #fff;
-    background-color: #333;
-    border: solid 1px #333;
+    color: var(--white-color);
+    background-color: var(--gray-dark-color);
+    border: solid 1px var(--gray-dark-color);
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
@@ -76,38 +79,24 @@ h2{
     max-width: 300px;
     margin: 1rem auto;
     padding: 2rem 1rem;
-    background-color: #fff;
-    color: #333;
+    background-color: var(--white-color);
+    color: var(--gray-dark-color);
     border-radius: 1rem;
 }
 
 #multiplication-operations .row{
     display: flex;
     justify-content: center;
-    border: solid 1px #ccc;
+    border: solid 1px var(--gray-light-color);
     border-bottom: none;
     padding: 0.5rem;
     width: 150px;
 }
 
 #multiplication-operations .row:last-child{
-    border-bottom: solid 1px #ccc;
+    border-bottom: solid 1px var(--gray-light-color);
 }
 
 #multiplication-operations .result{
     margin-left: 0.4rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
