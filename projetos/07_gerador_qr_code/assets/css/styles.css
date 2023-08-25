@@ -1,6 +1,96 @@
+:root{
+    --gray-color: #ccc;
+    --gray-dark-color: #444;
+    --gray-light-color: #777;
+    --green-light-color: #34db7a;
+    --green-dark-color: #086824;
+    --white-color: #fff;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Roboto;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--green-light-color);
+}
+
+.container{
+    background-color: var(--white-color);
+    height: 260px;
+    width: 400px;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.2s;
+}
+
+.container.active{
+    height: 500px;
+}
+
+#qr-header{
+    text-align: center;
+}
+
+#qr-header h1{
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#qr-header p{
+    color: var(--gray-dark-color);
+    font-size: 0.9rem;
+}
+
+#qr-form{
+    margin: 20px 15px;
+}
+
+#qr-form input, #qr-form button{
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+#qr-form input{
+    border: solid 1px var(--gray-light-color);
+    padding: 10px 15px;
+}
+
+#qr-form button{
+    background-color: var(--green-dark-color);
+    color: var(--white-color);
+    font-size: 1.2rem;
+    margin-top: 20px;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: 0.4s;
+}
+
+#qr-form button:hover{
+    opacity: 1;
+}
+
+#qr-code{
+    display: flex;
+    opacity: 0;
+    border: solid 1px var(--gray-color);
+    padding: 30px 0;
+    margin: 20px 15px;
+    justify-content: center;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.container.active #qr-code{
+    opacity: 1;
 }
