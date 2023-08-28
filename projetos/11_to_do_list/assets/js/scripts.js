@@ -4,6 +4,9 @@ const todoList = document.querySelector("#todo-list");
 const editForm = document.querySelector("#edit-form");
 const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
+const searchInput = document.querySelector("#search-input");
+const eraseBtn = document.querySelector("#erase-button");
+const filterBtn = document.querySelector("#filter-select");
 let oldInputValue;
 
 const createBtn = (element, className, icon) => {
@@ -46,6 +49,21 @@ const updateTodo = (text) => {
 
         if(todoTitle.innerText === oldInputValue){
             todoTitle.innerText = text;
+        }
+    });
+}
+
+const getSearchTodos = (search) => {
+    const todos = document.querySelectorAll(".todo");
+
+    todos.forEach((todo) => {
+        let todoTitle = todo.querySelector("h3").innerText.toLowerCase();
+        const normalizedSearch = search.toLowerCase();
+
+        todo.style.display = "flex";
+
+        if(!todoTitle.includes(normalizedSearch)){
+            todo.style.display = "none";
         }
     });
 }
@@ -101,4 +119,17 @@ editForm.addEventListener("submit", (e) => {
     }
 
     toggleForms();
+});
+
+searchInput.addEventListener("keyup", (e) => {
+    const search = e.target.value;
+    
+    getSearchTodos(search);
+});
+
+eraseBtn.addEventListener("", (e) => {
+    e.preventDefault();
+
+    searchInput.value = "";
+    searchInput.dispatchEvent(new Event("keyup"));
 });
