@@ -16,7 +16,7 @@ const createBtn = (element, className, icon) => {
     return btn;
 }
 
-const saveTodo = (text) => {
+const saveTodo = (text, done = 0, save = 1) => {
     const todo = document.createElement("div");
     const todoTitle = document.createElement("h3");
     const doneBtn = createBtn("button", "finish-todo", '<i class="fa-solid fa-check"><i/>');
@@ -29,6 +29,15 @@ const saveTodo = (text) => {
     todo.appendChild(doneBtn);
     todo.appendChild(editBtn);
     todo.appendChild(deleteBtn);
+
+    if(done){
+        todo.classList.add("done");
+    }
+
+    if(save){
+        saveTodoLocalStorage({text, done});
+    }
+
     todoList.appendChild(todo);
 
     todoInput.value = "";
@@ -111,6 +120,7 @@ document.addEventListener("click", (e) => {
 
     if(targetEl.classList.contains("remove-todo")){
         parentEl.remove();
+        removeTodoLocalStorage(todoTitle);
     }
     
     if(targetEl.classList.contains("edit-todo")) {
@@ -156,3 +166,31 @@ filterBtn.addEventListener("change", (e) => {
     const filterValue = e.target.value;
     filterTodos(filterValue);
 });
+
+const loadTodos = () => {
+    const todos = getTodosLocalStorage();
+
+    todos.forEach((todo) => {
+        saveTodo(todo.text, todo.done, 0);
+    });
+}
+
+const getTodosLocalStorage = () => {
+    const todos = JSON.parse(localStorage.getItem("todos")) || [];
+    return todos;
+}
+
+const saveTodoLocalStorage = (todo) => {
+    const todos = getTodosLocalStorage();
+    
+    todos.push(todo);
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+const removeTodoLocalStorage = (todoText) => {
+    const todos = getTodosLocalStorage();
+    const filteredTodos = todos.filter((todo) => todo.text !== todoText);
+    localStorage.setItem("todos", JSON.stringify(filteredTodos));
+}
+
+loadTodos();
