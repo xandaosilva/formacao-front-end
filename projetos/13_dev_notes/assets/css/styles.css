@@ -1,0 +1,155 @@
+:root{
+    --bg-primary-color: #202124;
+    --bg-secondary-color: #333;
+    --gb-terthiary-color: #555;
+    --bg-input-color: #525356;
+    --gray-primary-color: #ccc;
+    --gray-secondary-color: #ddd;
+    --note-bg-color: #202124;
+    --note-fixed-bg-color: #3c3c3f;
+    --white-color: #fff;
+}
+
+*{
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--bg-primary-color);
+}
+
+header{
+    border-bottom: solid 1px var(--gray-primary-color);
+    padding: 1rem 2rem;
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#search-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#search-input{
+    background-color: var(--bg-input-color);
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    color: var(--gray-secondary-color);
+}
+
+#search::placeholder{
+    color: var(--gray-secondary-color);
+}
+
+#export-notes{
+    background-color: var(--bg-secondary-color);
+    border: solid 2px var(--white-color);
+    border-radius: 4px;
+    color: var(--white-color);
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#export-notes:hover{
+    background-color: var(--white-color);
+    color: var(--bg-secondary-color);
+}
+
+#add-note-container{
+    display: flex;
+    width: 400px;
+    margin: 1rem auto 0;
+    gap: 1rem;
+}
+
+#add-note-container input, #add-note-container button{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#add-note-container input{
+    flex: 1;
+    background-color: transparent;
+    border: 1px solid var(--bg-input-color);
+    color: var(--white-color);
+}
+
+#add-note-container button{
+    cursor: pointer;
+    background-color: var(--bg-secondary-color);
+    color: var(--white-color);
+}
+
+#notes-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.note{
+    min-height: 200px;
+    padding: 1rem;
+    border: 1px solid var(--gray-primary-color);
+    background-color: var(--note-bg-color);
+    border-radius: 10px;
+    color: var(--white-color);
+    position: relative;
+}
+
+.note textarea{
+    background-color: transparent;
+    resize: none;
+    color: var(--white-color);
+    border: none;
+    height: 100%;
+    outline: none;
+}
+
+.note .bi-pin{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: var(--bg-secondary-color);
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.note:hover > i{
+    opacity: 1;
+}
+
+.note .bi-x-lg, .note .bi-file-earmark-plus{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--gb-terthiary-color);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.note .bi-file-earmark-plus{
+    top: 40px;
+}
+
+.note .bi-x-lg:hover, .note .bi-file-earmark-plus:hover{
+    color: var(--white-color);
+}
+
+.note.fixed {
+    background-color: var(--note-fixed-bg-color);
+}
