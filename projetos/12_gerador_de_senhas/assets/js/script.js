@@ -6,7 +6,7 @@ const lengthInput = document.querySelector("#length");
 const lettersInput = document.querySelector("#letters");
 const numbersInput = document.querySelector("#numbers");
 const symbolsInput = document.querySelector("#symbols");
-const copyPassword = document.querySelector("#copy-password");
+const copyPasswordButton = document.querySelector("#copy-password");
 
 const getLetterLowerCase = () => String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 const getLetterUpperCase = () => String.fromCharCode(Math.floor(Math.random() * 26) + 65);
@@ -55,4 +55,17 @@ generatePasswordButton.addEventListener("click", () => {
 
 openCloseGeneratorbutton.addEventListener("click", () => {
     generatePasswordContainer.classList.toggle("hide");
+});
+
+copyPasswordButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const password = generatedPasswordelement.querySelector("h4").innerText;
+    navigator.clipboard.writeText(password).then(() => {
+        copyPasswordButton.innerText = "Senha copiada com sucesso!";
+        
+        setTimeout(() => {
+            copyPasswordButton.innerText = "Copiar";
+        }, 1000);
+    });
 });
