@@ -104,40 +104,13 @@ const boxShadow = new BoxShadowGenerator(horizontal, horizontalRef, vertical, ve
 
 boxShadow.initialize();
 
-horizontal.addEventListener("input", (e) => {
-    const value = e.target.value;
-    boxShadow.updateValue("horizontal", value);
-});
-
-vertical.addEventListener("input", (e) => {
-    const value = e.target.value;
-    boxShadow.updateValue("vertical", value);
-});
-
-blur.addEventListener("input", (e) => {
-    const value = e.target.value;
-    boxShadow.updateValue("blur", value);
-});
-
-spread.addEventListener("input", (e) => {
-    const value = e.target.value;
-    boxShadow.updateValue("spread", value);
-});
-
-color.addEventListener("input", (e) => {
-    const value = e.target.value;
-    boxShadow.updateValue("color", value);
-});
-
-opacity.addEventListener("input", (e) => {
-    const value = e.target.value;
-    boxShadow.updateValue("opacity", value);
-});
-
-inset.addEventListener("input", (e) => {
-    const value = e.target.checked;
-    boxShadow.updateValue("inset", value);
-});
+horizontal.addEventListener("input", (e) => boxShadow.updateValue("horizontal", e.target.value));
+vertical.addEventListener("input", (e) => boxShadow.updateValue("vertical", e.target.value));
+blur.addEventListener("input", (e) => boxShadow.updateValue("blur", e.target.value));
+spread.addEventListener("input", (e) => boxShadow.updateValue("spread", e.target.value));
+color.addEventListener("input", (e) => boxShadow.updateValue("color", e.target.value));
+opacity.addEventListener("input", (e) => boxShadow.updateValue("opacity", e.target.value));
+inset.addEventListener("input", (e) => boxShadow.updateValue("inset", e.target.checked));
 
 rulesArea.addEventListener("click", () => {
     const rules = rulesArea.innerText.replace(/^\s*\n/gm, "");
