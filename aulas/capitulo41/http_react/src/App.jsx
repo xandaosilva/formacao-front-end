@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { useFetch } from './hooks/useFetch'
 
 import './App.css'
 
@@ -7,7 +8,7 @@ const url = 'http://localhost:3000/products'
 function App() {
   const [name, setName] = useState("")
   const [price, setPrice] = useState("")
-  const [products, setProducts] = useState([])
+  /* const [products, setProducts] = useState([]) */
 
   const cleanForm = () => {
     setName("")
@@ -16,35 +17,19 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
     const product = { name, price }
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(product)
-    })
-    const addedProduct = await res.json()
-    setProducts((prevProducts) => [...prevProducts, addedProduct])
-
+    httpConfig(product, "POST")
     cleanForm()
   }
 
-  useEffect(() => {
-    async function getData(){
-      const res = await fetch(url)
-      const data = await res.json()
-      setProducts(data)
-    }
-    getData()
-  }, [])
+  const { data: items, httpConfig, loading } = useFetch(url)
 
   return (
     <div className="App">
       <h1>Http em React</h1>
+      {loading && <p>Carregando lista de produtos</p>}
       <ul>
-        {products.map((product) => (
+        {items && items.map((product) => (
           <li key={product.id}>{product.name} - {product.price}</li>
         ))}
       </ul>
@@ -58,7 +43,9 @@ function App() {
             <span>Preço</span>
             <input type="text" name="price" id="price" onChange={(e) => setPrice(e.target.value)} value={price} />
           </label>
-          <input type="submit" value="Enviar" />
+          {/* <input type="submit" value="Enviar" /> */}
+          {loading && <input type="submit" value="Aguarde" disabled />}
+          {!loading && <input type="submit" value="Enviar" />}
         </form>
       </div>
     </div>
