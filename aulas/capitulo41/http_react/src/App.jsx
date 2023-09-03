@@ -22,12 +22,13 @@ function App() {
     cleanForm()
   }
 
-  const { data: items, httpConfig, loading } = useFetch(url)
+  const { data: items, httpConfig, loading, error } = useFetch(url)
 
   return (
     <div className="App">
       <h1>Http em React</h1>
       {loading && <p>Carregando lista de produtos</p>}
+      {error && <p>{error}</p>}
       <ul>
         {items && items.map((product) => (
           <li key={product.id}>{product.name} - {product.price}</li>
