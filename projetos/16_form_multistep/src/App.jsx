@@ -6,11 +6,26 @@ import Thanks from './components/Thanks'
 import UserForm from './components/UserForm'
 
 import { useForm } from './hooks/useForm'
+import { useState } from 'react'
 
 import './App.css'
 
+const formTemplate = { name: "", email: "", review: "", comment: "" }
+
 function App() {
-  const formComponents = [ <UserForm key={0} />, <ReviewForm key={1} />, <Thanks key={2} /> ]
+  const [data, setData] = useState(formTemplate)
+
+  const updatefieldHandler = (key, value) => {
+    setData((prev) => {
+      return {...prev, [key]: value}
+    })
+  }
+
+  const formComponents = [ 
+    <UserForm key={0} data={data} updatefieldHandler={updatefieldHandler} />,
+    <ReviewForm key={1} data={data} updatefieldHandler={updatefieldHandler} />,
+    <Thanks key={2} data={data} /> 
+  ]
   const { currentStep, currentComponent, changeStep, isFirstStep, isLastStep } = useForm(formComponents)
 
   return (
