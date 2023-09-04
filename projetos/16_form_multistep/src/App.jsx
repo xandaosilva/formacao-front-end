@@ -1,8 +1,9 @@
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
 import { FiSend } from 'react-icons/fi'
-import UserForm from './components/UserForm'
 import ReviewForm from './components/ReviewForm'
+import Steps from './components/Steps'
 import Thanks from './components/Thanks'
+import UserForm from './components/UserForm'
 
 import { useForm } from './hooks/useForm'
 
@@ -19,7 +20,7 @@ function App() {
         <p>Ficamos felizes com a sua compra, utilize o formulário abaixo para avaliar o produto</p>
       </div>
       <div className="form-container">
-        <p>Etapas</p>
+        <Steps currentStep={currentStep} />
         <form onSubmit={(e) => changeStep(currentStep + 1, e)}>
           <div className="inputs-container">{currentComponent}</div>
           <div className="actions">
