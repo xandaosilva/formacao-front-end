@@ -13,7 +13,7 @@ function App() {
   const { currentStep, currentComponent, changeStep, isFirstStep, isLastStep } = useForm(formComponents)
 
   return (
-    <div className="App">
+    <div className="app">
       <div className="header">
         <h2>Deixe sua avaliação</h2>
         <p>Ficamos felizes com a sua compra, utilize o formulário abaixo para avaliar o produto</p>
