@@ -27,7 +27,7 @@ const quizReducer = (state, action) => {
                 endGame = true;
             }
 
-            return { ...state, currentQuestion: nextQuestion, gameStage: endGame ? STAGES[2] : state.gameStage };
+            return { ...state, currentQuestion: nextQuestion, gameStage: endGame ? STAGES[2] : state.gameStage, answerSelected: false };
         case "NEW_GAME":
             return initialState;
         case "CHECK_ANSWER":
