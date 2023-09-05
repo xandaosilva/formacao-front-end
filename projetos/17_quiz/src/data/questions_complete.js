@@ -79,6 +79,7 @@ const data = [
                     "hover"
                 ],
                 answer: "font-size",
+                tip: "Tamanho em inglês"
             },
             {
                 question: "A posição que deixa um elemento fixo é a:",
@@ -89,6 +90,7 @@ const data = [
                     "relative"
                 ],
                 answer: "fixed",
+                tip: "Algo que não se move"
             },
         ],
     },
