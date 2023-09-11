@@ -37,7 +37,7 @@ const Admin = () => {
                     <div className="post" key={post.id}>
                         <h2>{post.title}</h2>
                         <div className="actions">
-                            <Link className="btn edit-btn">Editar</Link>
+                            <Link to={`/posts/edit/${post.id}`} className="btn edit-btn">Editar</Link>
                             <button className="btn delete-btn" onClick={() => deletePost(post.id)}>Deletar</button>
                         </div>
                     </div>
