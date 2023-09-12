@@ -16,7 +16,6 @@ const Party = () => {
     useEffect(() => {
         const loadParty = async() => {
             const res = await partyFetch.get(`/parties/${id}`);
-            console.log(res.data);
             setParty(res.data);
         }
 
@@ -41,7 +40,7 @@ const Party = () => {
         <div className="party">
             <h1>{party.title}</h1>
             <div className="actions-container">
-                <Link className="btn">Editar</Link>
+                <Link className="btn" to={`/party/edit/${party._id}`}>Editar</Link>
                 <button className="btn-secondary" onClick={handleDelete}>Excluir</button>
             </div>
             <p>Orçamento: R${party.budget}</p>
