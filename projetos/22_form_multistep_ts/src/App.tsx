@@ -4,10 +4,14 @@ import ReviewForm from "./components/ReviewForm"
 import Thanks from "./components/Thanks"
 import UseForm from "./components/UseForm"
 
+import { useForm } from "./hooks/useForm"
 
 import './App.css'
 
 function App() {
+  const formComponents = [ <UseForm />, <ReviewForm />, <Thanks /> ];
+  const { currentStep, currentComponent, changeStep } = useForm(formComponents);
+
   return (
     <div className='App'>
       <div className='header'>
@@ -16,16 +20,14 @@ function App() {
       </div>
       <div className="form-container">
         <p>passos</p>
-        <form>
-          <div className="inputs-container">
-            <UseForm />
-          </div>
+        <form onSubmit={(e) => changeStep(currentStep + 1, e)}>
+          <div className="inputs-container">{currentComponent}</div>
           <div className="actions">
-            <button>
+            <button type="button" onClick={() => changeStep(currentStep - 1)}>
               <GrFormPrevious />
               <span>Voltar</span>
             </button>
-            <button>
+            <button type="submit">
               <span>Avançar</span>
               <GrFormNext />
             </button>
