@@ -19,16 +19,30 @@ const Repos = () => {
             const res = await fetch(`https://api.github.com/users/${username}/repos`);
             const data = await res.json();
             setIsLoading(false);
-            console.log(data);
+            setRepos(data);
         };
 
-        loadRepos(username);
+        if(username){
+            loadRepos(username);
+        }
     }, []);
+
+    if(!repos && isLoading){
+        return <Loader />
+    }
 
     return (
         <div>
             <BackBtn />
-            Repos: {username}
+            <h2>Explore os repositórios do usuário: {username}</h2>
+            {repos && repos.length === 0 && <p>Não há repositórios.</p>}
+            {repos && repos.length > 0 && (
+                <div>
+                    {repos.map((repo: RepoProps) => (
+                        <p>{repo.name}</p>
+                    ))}
+                </div>
+            )}
         </div>
     )
 }
